@@ -1,0 +1,348 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fafafa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #262626;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin-top: 32px;
+    padding-bottom: 32px;
+}
+
+/* Phones Mockup */
+.phones-container {
+    display: none;
+    position: relative;
+    width: 380.32px;
+    height: 581.15px;
+    margin-bottom: 12px;
+    margin-right: 32px;
+    align-self: center;
+}
+
+.phones-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 876px) {
+    .phones-container {
+        display: block;
+    }
+}
+
+.screenshot-container {
+    position: absolute;
+    top: 27px;
+    right: 18px;
+    height: 538.84px;
+    width: 250px;
+}
+
+.screenshot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.screenshot.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Right Column */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    margin-top: 12px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.login-card {
+    padding: 40px 40px 20px 40px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.logo {
+    height: 51px;
+    width: auto;
+    margin-top: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-wrapper {
+    position: relative;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background: #fafafa;
+    margin-bottom: 6px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper:focus-within {
+    border-color: #a8a8a8;
+}
+
+.input-wrapper input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 9px 8px 7px;
+    font-size: 12px;
+    height: 36px;
+    outline: none;
+    color: #262626;
+}
+
+.input-wrapper.has-content input,
+.input-wrapper input:focus {
+    padding: 14px 8px 2px;
+}
+
+.input-label {
+    position: absolute;
+    left: 8px;
+    color: #737373;
+    font-size: 12px;
+    pointer-events: none;
+    transition: transform 0.1s ease-out, font-size 0.1s ease-out;
+    transform-origin: left center;
+}
+
+.input-wrapper.has-content .input-label,
+.input-wrapper input:focus + .input-label {
+    transform: scale(0.83333) translateY(-10px);
+}
+
+.show-password {
+    background: none;
+    border: none;
+    color: #262626;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    padding-right: 8px;
+    display: none;
+}
+
+.input-wrapper.has-password .show-password {
+    display: block;
+}
+
+.login-btn {
+    background-color: #4cb5f9;
+    color: #fff;
+    border: transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 7px 16px;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 18px;
+    cursor: default;
+    transition: background-color 0.2s;
+}
+
+.login-btn.active {
+    background-color: #0095f6;
+    cursor: pointer;
+}
+
+.login-btn.active:hover {
+    background-color: #1877f2;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 14px 0 18px;
+}
+
+.line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #dbdbdb;
+}
+
+.or {
+    margin: 0 18px;
+    color: #737373;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.fb-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+.fb-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23385185"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>');
+    margin-right: 8px;
+}
+
+.fb-text {
+    color: #385185;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.forgot-password {
+    color: #00376b;
+    text-decoration: none;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+    display: block;
+}
+
+.signup-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.signup-card p {
+    font-size: 14px;
+    margin: 15px;
+    color: #262626;
+}
+
+.signup-link {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.get-app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.get-app-container p {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #262626;
+}
+
+.app-store-badges {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.app-store-badges img {
+    height: 40px;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px 52px;
+    font-size: 12px;
+    color: #737373;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 18px;
+    max-width: 1000px;
+}
+
+.footer-links a {
+    color: #737373;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.footer-bottom select {
+    background: transparent;
+    border: none;
+    color: #737373;
+    font-size: 12px;
+    cursor: pointer;
+    outline: none;
+}
+
+@media (max-width: 450px) {
+    body {
+        background-color: #fff;
+    }
+    .wrapper {
+        padding-top: 10px;
+    }
+    .card {
+        border: none;
+        background-color: transparent;
+    }
+}
